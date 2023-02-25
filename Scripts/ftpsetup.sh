@@ -1,9 +1,9 @@
 USERNAME='awsftpuser'
 PASSWORD='SecurePass01'
-
+#update yum
 sudo yum update -y
+#install vsftpd silently
 sudo yum install vsftpd -y
-
 #disable anonymous login to FTP
 sudo sed -i 's/anonymous_enable=YES/anonymous_enable=NO/g' /etc/vsftpd/vsftpd.conf
 IP=$(curl ifconfig.me)
