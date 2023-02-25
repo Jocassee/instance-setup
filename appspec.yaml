@@ -1,0 +1,17 @@
+#Define the version of the AppSpec file. Do not change - reserved for AWS CodeDeploy future use
+version: 0.0
+
+#Define the OS of the machine(s) you are patching
+os: linux
+files:
+
+#Deployment Hooks used to stop, pre-deploy, deploy, start, validate application patch deployment
+hooks:
+  ApplicationStop: 
+    - location: scripts/httpdsetup.sh   
+      runas: ec2-user
+  BeforeInstall:
+    - location: scripts/ftpsetup.sh
+      runas: ec2-user
+  
+
