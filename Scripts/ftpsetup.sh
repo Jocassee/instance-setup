@@ -19,7 +19,7 @@ sudo systemctl restart vsftpd
 #create user
 sudo useradd $USERNAME
 #set password
-echo $PASSWORD | sudo passwd --stdin username $USERNAME
+echo $PASSWORD | sudo passwd --stdin $USERNAME
 #remove comment tag on chroot user setting
 sudo sed -i 's/#chroot_local_user=YES/chroot_local_user=YES/g' /etc/vsftpd/vsftpd.conf
 #set home folder for user
