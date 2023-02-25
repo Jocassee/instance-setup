@@ -8,10 +8,10 @@ files:
 #Deployment Hooks used to stop, pre-deploy, deploy, start, validate application patch deployment
 hooks:
   ApplicationStop: 
-    - location: scripts/httpdsetup.sh   
+    - location: /scripts/httpdsetup.sh   
       runas: ec2-user
   BeforeInstall:
-    - location: scripts/ftpsetup.sh
+    - location: /scripts/ftpsetup.sh
       runas: ec2-user
   
 
