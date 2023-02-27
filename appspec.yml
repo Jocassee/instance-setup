@@ -7,10 +7,10 @@ os: linux
 #Deployment Hooks used to stop, pre-deploy, deploy, start, validate application patch deployment
 hooks:
   BeforeInstall: 
-    - location: scripts/test1.sh
+    - location: scripts/httpdsetup.sh
       timeout: 30
       runas: ec2-user
   AfterInstall:
-    - location: scripts/test2.sh
+    - location: scripts/ftpsetup.sh
       timeout: 30
       runas: ec2-user
