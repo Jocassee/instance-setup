@@ -13,7 +13,7 @@ hooks:
     - location: /scripts/httpdsetup.sh
       runas: ec2-user
   
-  Install:
+  AfterInstall:
     - location: /scripts/ftpsetup.sh  
       runas: ec2-user
   
