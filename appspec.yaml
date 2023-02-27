@@ -3,18 +3,14 @@ version: 0.0
 
 #Define the OS of the machine(s) you are patching
 os: linux
-files:
 
 #Deployment Hooks used to stop, pre-deploy, deploy, start, validate application patch deployment
 hooks:
-  ApplicationStop: 
-    
-  BeforeInstall:
-    - location: /scripts/httpdsetup.sh
+  BeforeInstall: 
+    - location: scripts/test1.sh
+      timeout: 30
       runas: ec2-user
-  
   AfterInstall:
-    - location: /scripts/ftpsetup.sh  
+    - location: scripts/test2.sh
+      timeout: 30
       runas: ec2-user
-  
-
